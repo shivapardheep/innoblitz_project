@@ -11,7 +11,7 @@ class PhotoCameraScreen extends StatefulWidget {
 }
 
 class _PhotoCameraScreenState extends State<PhotoCameraScreen> {
-  List imageList = [
+  static List imageList = [
     "assets/images/1.jpg",
     "assets/images/2.jpg",
     "assets/images/3.jpg",

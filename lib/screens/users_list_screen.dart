@@ -47,8 +47,6 @@ class _UsersListScreenState extends State<UsersListScreen> {
     if (_currentLocation == null) {
       getLocation();
     } else {
-      print(_currentLocation!.latitude.toString());
-      print(_currentLocation!.longitude.toString());
       var lat = 13.067439;
       var lng = 80.237617;
 

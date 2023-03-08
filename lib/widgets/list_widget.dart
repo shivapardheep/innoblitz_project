@@ -17,12 +17,7 @@ SizedBox listWidget(
               child: ListTile(
                 onTap: () async {
                   if (currentLocation != null) {
-                    print(currentLocation.latitude.toString());
-                    print(currentLocation.longitude.toString());
-                    var lat = 13.067439;
-                    var lng = 80.237617;
-
-                    var url =
+                    String url =
                         'https://www.google.com/maps/dir/?api=1&destination=${dataList[i].address!.geo!.lat},${dataList[i].address!.geo!.lng}';
                     url +=
                         '&origin=${currentLocation.latitude},${currentLocation.longitude}';
@@ -36,7 +31,7 @@ SizedBox listWidget(
                   maxRadius: 30,
                   // radius: 100,
                   backgroundImage:
-                      AssetImage("assets/image${i % 2 == 0 ? 1 : 2}.jpg"),
+                      AssetImage("assets/icons/image${i % 2 == 0 ? 1 : 2}.jpg"),
                 ),
                 title: Text(dataList[i].name.toString()),
                 subtitle: Text(dataList[i].email.toString()),
