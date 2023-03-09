@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:innoblitz_project/widgets/bottom_navbar_widget.dart';
+import 'package:innoblitz_project/widgets/insta_post_widget.dart';
 import 'package:innoblitz_project/widgets/story_widget.dart';
 
 class InstagramScreen extends StatefulWidget {
@@ -10,6 +11,16 @@ class InstagramScreen extends StatefulWidget {
 }
 
 class _InstagramScreenState extends State<InstagramScreen> {
+  List<String> instagramIds = [
+    "instagram",
+    "cristiano",
+    "beyonce",
+    "therock",
+    "selenagomez",
+    "arianagrande",
+    "leomessi",
+    "katyperry"
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,17 +46,20 @@ class _InstagramScreenState extends State<InstagramScreen> {
           Container(width: 15),
         ],
       ),
-      body: Column(
-        children: const [
-          storyWidget(),
-          Divider(
-            height: 1,
-            thickness: 0.3,
-            color: Colors.grey,
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const storyWidget(),
+            const Divider(
+              height: 1,
+              thickness: 0.3,
+              color: Colors.grey,
+            ),
+            InstaPostWidget(instagramIds: instagramIds)
+          ],
+        ),
       ),
-      bottomNavigationBar: const BottomNavBarWidget(),
+      bottomNavigationBar: BottomNavBarWidget(),
     );
   }
 }

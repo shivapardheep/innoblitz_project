@@ -44,22 +44,26 @@ class _PhotoCameraScreenState extends State<PhotoCameraScreen> {
           ),
         ],
       ),
-      body: GridView.count(
-        crossAxisCount: 2,
-        mainAxisSpacing: 5,
-        crossAxisSpacing: 5,
-        children: imageList
-            .map((e) => e.toString().contains("assets/images/")
-                ? Image.asset(
-                    e,
-                    fit: BoxFit.cover,
-                  )
-                : Image.file(
-                    File(e),
-                    fit: BoxFit.cover,
-                  ))
-            .toList(),
-      ),
+      body: gridView(),
+    );
+  }
+
+  GridView gridView() {
+    return GridView.count(
+      crossAxisCount: 2,
+      mainAxisSpacing: 5,
+      crossAxisSpacing: 5,
+      children: imageList
+          .map((e) => e.toString().contains("assets/images/")
+              ? Image.asset(
+                  e,
+                  fit: BoxFit.cover,
+                )
+              : Image.file(
+                  File(e),
+                  fit: BoxFit.cover,
+                ))
+          .toList(),
     );
   }
 }
